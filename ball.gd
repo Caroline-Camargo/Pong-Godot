@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
+const SPEED = 440.0
 var direction = Vector2.ZERO
 
 func _ready():
@@ -14,5 +14,7 @@ func _physics_process(delta):
 		velocity = direction * SPEED
 	else:
 		velocity = velocity.move_toward(Vector2.ZERO, SPEED)
-
+		
 	move_and_slide()
+
+	

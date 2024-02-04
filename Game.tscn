@@ -1,17 +1,24 @@
-[gd_scene load_steps=6 format=3 uid="uid://dia4ggphr53q0"]
+[gd_scene load_steps=7 format=3 uid="uid://dia4ggphr53q0"]
 
 [ext_resource type="PackedScene" uid="uid://b8q38ofb20phr" path="res://player.tscn" id="1_rcxkq"]
 [ext_resource type="Script" path="res://Game.gd" id="1_tsjhp"]
 [ext_resource type="PackedScene" uid="uid://c23yw3kmxdl13" path="res://ball.tscn" id="2_gs52u"]
+[ext_resource type="Texture2D" uid="uid://bh7lay0bd7bex" path="res://Asset/mesaPong.png" id="4_wyrna"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_todhe"]
 size = Vector2(1178.49, 82)
 
 [sub_resource type="SystemFont" id="SystemFont_44mkq"]
 font_names = PackedStringArray("Matura MT Script Capitals")
+subpixel_positioning = 0
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_tsjhp")
+
+[node name="MesaPong" type="Sprite2D" parent="."]
+position = Vector2(581.5, 321.5)
+scale = Vector2(0.616146, 0.628704)
+texture = ExtResource("4_wyrna")
 
 [node name="Top" type="Area2D" parent="."]
 collision_layer = 0
@@ -51,7 +58,8 @@ shape = SubResource("RectangleShape2D_todhe")
 position = Vector2(63, 317)
 
 [node name="Player2" parent="." instance=ExtResource("1_rcxkq")]
-position = Vector2(1092, 303)
+position = Vector2(1078, 334)
+rotation = -3.1008
 side = "p2"
 
 [node name="Ball" parent="." instance=ExtResource("2_gs52u")]
